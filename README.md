@@ -19,5 +19,5 @@ The necessary stdin values for 6 assignments with a 10 point penalty, 0 number o
 Once the user has inputted successful values, the command-line will display output.
 
 ## Side Effects:
-- Assignment grades must only be integers. (Will fix in the future)
+- Assignment scores must only be integers. (Will fix in the future)
 - Doesn't handle any exceptions if one occurs.
