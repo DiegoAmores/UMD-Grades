@@ -6,7 +6,7 @@ The C command-line script reads in points to be deducted, the number of assignme
 
 ## How to Run Code Using GCC (GNU Compiler Collection):
 You must have a C compiler installed and execute the following command in the terminal:
-- gcc -Wall -std=gnu99 -o a.out source_file.c -lm
+- gcc -Wall -std=gnu99 -o a.out grades.c -lm
 <br>
 The user must stdin values for penalty points per day, number of dropped assignments, and whether to generate statistical information on the first line. On the second line, users must stdin value for the number of assignments. Finally, on the third line, users must stdin values for assignment number, assignment score, assignment weight, and the number of days late and repeat the progress for the number of assignments they input.
 
