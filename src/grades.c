@@ -136,6 +136,8 @@ int whether_to_generate_statistical_info(char generate_statistical_info){
 /**************************************************************/
 void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[], int days_late_arr[], int number_of_assignments, int points_penalty_per_day, int number_of_drop_assignments, int size, char generate_statistical_info){
   double numeric_score = 0.0, mean = 0.0, standard_deviation = 0.0, sum = 0.0;
+  double lowest = 0.0, sum_scores = 0.0, sum_weight = 0.0;
+  double lowest_scores [50];
   int i, j, k;
 
   /*if score minus the late penalty is less than 0 add 0 if not add values*/
@@ -186,8 +188,7 @@ void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[]
 		  printf("%d, %d, %d, %d\n", assignment_arr[i], score_arr[i], weight_arr[i], days_late_arr[i]);
   
   } else if(number_of_drop_assignments <= number_of_assignments - 1 && number_of_drop_assignments > 0){
-	  double lowest = 101.0, sum_scores = 0.0, sum_weight = 0.0;
-	  double lowest_scores [50];
+	  lowest = 101.0, sum_scores = 0.0, sum_weight = 0.0;
 	  
 	  for(i = 0; i < number_of_assignments; i++){
 		  lowest_scores[i] = (score_arr[i]  * (weight_arr[i] / 100.0));
@@ -208,11 +209,12 @@ void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[]
 	  }
 	  
 	  for(i = 0; i < size; i++){
-		  if(lowest_scores[i] != -1)
+		  if(lowest_scores[i] != -1){
 			  if(score_arr[i] - (points_penalty_per_day * days_late_arr[i]) < 0)
 				  lowest_scores[i] = 0;
 			  else 
 				  lowest_scores[i] = (score_arr[i]-(points_penalty_per_day*days_late_arr[i]))*weight_arr[i]/100.0;
+		  }
 	  }
   }
   
@@ -225,8 +227,8 @@ void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[]
   
   numeric_score = sum_scores / sum_weight;
   
-  if(whether_to_generate_statistical_info(generate_statistical_info) == 0){
-	  printf("Numeric Score: %5.4f\n", numeric_score);
+  if(number_of_drop_assignments >= 1 && whether_to_generate_statistical_info(generate_statistical_info) == 0){
+	    printf("Numeric Score: %5.4f\n", numeric_score);
       printf("Points Penalty Per Day Late: %d\n", points_penalty_per_day);
       printf("Number of Assignments Dropped: %d\n", number_of_drop_assignments);
       printf("Values Provided:\nAssignment, Score, Weight, Days Late\n");
@@ -234,15 +236,15 @@ void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[]
       for(i = 0; i < size; i++)
 		  printf("%d, %d, %d, %d\n", assignment_arr[i], score_arr[i], weight_arr[i], days_late_arr[i]);
 	  
-  } else if(whether_to_generate_statistical_info(generate_statistical_info) == 1){
-	  printf("Numeric Score: %5.4f\n", numeric_score);
+  } else if(number_of_drop_assignments >= 1 && whether_to_generate_statistical_info(generate_statistical_info) == 1){
+	    printf("Numeric Score: %5.4f\n", numeric_score);
       printf("Points Penalty Per Day Late: %d\n", points_penalty_per_day);
       printf("Number of Assignments Dropped: %d\n", number_of_drop_assignments);
       printf("Values Provided:\nAssignment, Score, Weight, Days Late\n");
 	  
 	  for(i = 0; i < size; i++)
 		  printf("%d, %d, %d, %d\n", assignment_arr[i], score_arr[i], weight_arr[i], days_late_arr[i]);
+
 	  printf("Mean: %5.4f, Standard Deviation: %5.4f\n", mean, standard_deviation);
   }
 }
-
