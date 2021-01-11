@@ -137,7 +137,7 @@ int whether_to_generate_statistical_info(char generate_statistical_info){
 void compute_math_values(int assignment_arr[], int score_arr[], int weight_arr[], int days_late_arr[], int number_of_assignments, int points_penalty_per_day, int number_of_drop_assignments, int size, char generate_statistical_info){
   double numeric_score = 0.0, mean = 0.0, standard_deviation = 0.0, sum = 0.0;
   double lowest = 0.0, sum_scores = 0.0, sum_weight = 0.0;
-  double lowest_scores [50];
+  int lowest_scores [50];
   int i, j, k;
 
   /*if score minus the late penalty is less than 0 add 0 if not add values*/
