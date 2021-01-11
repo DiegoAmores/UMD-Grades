@@ -12,4 +12,11 @@ they want to choose to view statistical information.
 You must have a C compiler installed and execute the following command in the terminal:
 - gcc -Wall -std=gnu99 -o a.out source_file.c -lm
 
+## Command-line Interface:
+The user must stdin values for penalty points per day, number of dropped assignments, and whether to generate statistical information on the first line.
+On the second line, users must stdin value for number of assignments.
+Finally, on the third line, users must stdin values for assignment number, assignment score, assignment weight, and number of days late. <br>
+![UMD-Grades script]()
+
+
 
