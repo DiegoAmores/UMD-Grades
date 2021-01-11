@@ -21,3 +21,6 @@ Once the user has inputted successful values, the command-line will display outp
 ## Side Effects:
 - Assignment scores must only be integers. (Will fix in the future)
 - Doesn't handle any exceptions if one occurs.
+
+## Reference:
+GCC (GNU Compiler Collection) Documentation: https://gcc.gnu.org/onlinedocs/
