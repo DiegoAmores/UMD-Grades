@@ -21,7 +21,7 @@ Finally, on the third line, users must stdin values for assignment number, assig
 ![UMD-Grades script](https://github.com/DiegoAmores/UMD-Grades/blob/main/images/command-line%20arguments.PNG) <br>
 The necessary stdin values for 6 assigments with a 10 point penality, 0 number of dropped assignments, and whether they want statistical information (Y/N).
 
-![UMD-Grades output]()
-
+![UMD-Grades output](https://github.com/DiegoAmores/UMD-Grades/blob/main/images/command-line%20output.PNG)
+Once the user has inputted successful values, they are granted with the proper output.
 
 
