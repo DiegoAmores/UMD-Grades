@@ -14,11 +14,14 @@ You must have a C compiler installed and execute the following command in the te
 <br>
 The user must stdin values for penalty points per day, number of dropped assignments, and whether to generate statistical information on the first line.
 On the second line, users must stdin value for number of assignments.
-Finally, on the third line, users must stdin values for assignment number, assignment score, assignment weight, and number of days late.
+Finally, on the third line, users must stdin values for assignment number, assignment score, assignment weight, and number of days late and repeat the progress for the number of assigments they input.
 
 ## Command-line Interface:
 
-![UMD-Grades script](https://github.com/DiegoAmores/UMD-Grades/blob/main/images/command-line%20arguments.PNG)
+![UMD-Grades script](https://github.com/DiegoAmores/UMD-Grades/blob/main/images/command-line%20arguments.PNG) <br>
+The necessary stdin values for 6 assigments with a 10 point penality, 0 number of dropped assignments, and whether they want statistical information (Y/N).
+
+![UMD-Grades output]()
 
 
 
