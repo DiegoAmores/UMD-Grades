@@ -20,6 +20,7 @@ Once the user has inputted successful values, the command-line will display outp
 
 ## Side Effects:
 - Assignment scores must only be integers. (Will fix in the future)
+- The weight of all assignments must add up to 100% or else invalid values are provided.
 - Doesn't handle any exceptions if one occurs.
 
 ## Reference:
