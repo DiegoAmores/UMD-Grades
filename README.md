@@ -1,4 +1,4 @@
-## UMD-Grades
+## UMD-Grades Project
 
 ## Introduction
 
